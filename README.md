@@ -1,6 +1,6 @@
-# Gemini Pro Vision Demo
+# Gemini AI Multimodal Demo
 
-This is a multimodal AI application that demonstrates the capabilities of Google's Gemini Pro Vision model. The application allows users to upload images and analyze them using different AI tasks.
+This is a multimodal AI application that demonstrates the capabilities of Google's Gemini 1.5 Flash model. The application allows users to upload images and analyze them using different AI tasks.
 
 ## Features
 
@@ -21,7 +21,7 @@ This is a multimodal AI application that demonstrates the capabilities of Google
 ### Prerequisites
 
 - Node.js 18+ installed on your local development machine
-- A Google API key for Gemini Pro Vision
+- A Google API key for Gemini models
 
 ### Installation
 
@@ -32,7 +32,7 @@ This is a multimodal AI application that demonstrates the capabilities of Google
    \`\`\`
 3. Create a `.env.local` file in the root directory and add your Gemini API key:
    \`\`\`
-   NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key_here
+   GEMINI_API_KEY=your_gemini_api_key_here
    \`\`\`
 4. Start the development server:
    \`\`\`bash
@@ -58,7 +58,7 @@ This project uses Biome.js for linting and formatting. You can run the following
 
 ## Environment Variables
 
-- `NEXT_PUBLIC_GEMINI_API_KEY`: Your Google API key for Gemini Pro Vision
+- `NEXT_PUBLIC_GEMINI_API_KEY`: Your Google API key for Gemini models
 
 ## License
 

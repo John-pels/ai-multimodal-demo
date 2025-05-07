@@ -15,6 +15,7 @@ This is a multimodal AI application that demonstrates the capabilities of Google
 - Real-time preview of uploaded images
 - Client-side caching of results
 - Advanced error handling
+- Biome.js for code linting and formatting
 
 ## Getting Started
 

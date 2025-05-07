@@ -74,7 +74,14 @@ export default function ResultsPanel({
             {result.metadata && (
               <div className="mt-4 text-sm text-gray-500 border-t pt-3">
                 <p>Model: {result.metadata.model}</p>
-                <p>Processing time: {result.metadata.processingTime}ms</p>
+                <p>
+                  Processing time: {Math.floor(result.metadata.processingTime / 60000)}{" "}
+                  {Math.floor(result.metadata.processingTime / 60000) === 1 ? "minute" : "minutes"}{" "}
+                  {Math.floor((result.metadata.processingTime % 60000) / 1000)}{" "}
+                  {Math.floor((result.metadata.processingTime % 60000) / 1000) === 1
+                    ? "second"
+                    : "seconds"}
+                </p>
                 <p>Task: {result.metadata.task}</p>
                 {result.metadata.timestamp && (
                   <p>Generated: {formatTimestamp(result.metadata.timestamp)}</p>

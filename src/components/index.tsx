@@ -1,6 +1,6 @@
 "use client";
 
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, Loader2 } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
 import ImageUpload from "@/components/image-upload";
@@ -270,16 +270,19 @@ export function LandingPage() {
                     type="submit"
                     onClick={handleAnalyze}
                     disabled={loadingState !== "idle" || !imageFile}
-                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="cursor-pointer flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {loadingState === "analyzing" ? "Processing..." : "Analyze"}
+                    {loadingState === "analyzing" ?
+                      <Loader2 className="h-6 w-6 animate-spin text-white m-auto" />
+                      :
+                      "Analyze"}
                   </button>
 
                   {result && (
                     <button
                       type="button"
                       onClick={handleClearCache}
-                      className="bg-gray-200 hover:bg-gray-300 text-gray-800 py-3 px-4 rounded-md transition-colors"
+                      className="cursor-pointer bg-gray-200 hover:bg-gray-300 text-gray-800 py-3 px-4 rounded-md transition-colors"
                       title="Clear cached result"
                     >
                       Clear Cache
@@ -298,14 +301,14 @@ export function LandingPage() {
                         {(error.type === "network" ||
                           error.type === "timeout" ||
                           error.type === "server") && (
-                          <button
-                            type="button"
-                            onClick={handleRetry}
-                            className="mt-2 text-sm bg-red-100 hover:bg-red-200 text-red-800 py-1 px-3 rounded"
-                          >
-                            Retry
-                          </button>
-                        )}
+                            <button
+                              type="button"
+                              onClick={handleRetry}
+                              className="mt-2 text-sm bg-red-100 hover:bg-red-200 text-red-800 py-1 px-3 rounded"
+                            >
+                              Retry
+                            </button>
+                          )}
 
                         {error.type === "quota" && (
                           <p className="text-xs text-red-600 mt-2">

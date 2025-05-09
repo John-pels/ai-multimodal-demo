@@ -11,11 +11,9 @@
     "check": "biome check --write ."
   },
   "dependencies": {
-    "@ai-sdk/google": "^1.2.15",
     "@google/generative-ai": "^0.24.1",
     "@radix-ui/react-tabs": "^1.1.11",
     "@radix-ui/react-toast": "^1.2.13",
-    "ai": "^4.3.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.507.0",
